@@ -1,0 +1,5 @@
+[dev]
+172.31.52.108
+
+[tomcat-nodes]
+172.31.52.108 ansible_sudo_pass=redhat ansible_ssh_user=root
