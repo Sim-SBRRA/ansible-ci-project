@@ -82,3 +82,7 @@
     - /usr/share/tomcat/webapps/host-manager/META-INF/context.xml
     - /usr/share/tomcat/webapps/manager/META-INF/context.xml
   notify: restart tomcat
+
+- name: copy war file
+  copy: src=./target/maven-web-application.war dest=/usr/share/tomcat/webapps/
+  notify: restart tomcat
