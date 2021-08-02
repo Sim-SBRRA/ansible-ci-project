@@ -26,7 +26,28 @@ pipeline {
             }
             }
         }
-     
+        
+        stage('compile'){
+                steps{
+                    sh 'mvn compile'
+                }
+            }
+            stage('Package'){
+                steps{
+                    sh 'mvn package'
+                }
+            }
+            stage('review_job'){
+                steps{
+                    sh 'mvn -P metrices pmd:pmd'
+                }
+            }
+            stage('unit test'){
+                steps{
+                    sh 'mvn test'
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
         
         stage('Ansible Deploy') {
              
