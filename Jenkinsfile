@@ -54,7 +54,7 @@ pipeline {
             steps {
                  
              
-               sh "ansible-playbook tomcat-setup.yml -vvv --user jenkins --key-file ~/.ssh/id_rsa"
+               sh "ansible-playbook tomcat-setup.yml --user jenkins --key-file ~/.ssh/id_rsa"
 
                
             
